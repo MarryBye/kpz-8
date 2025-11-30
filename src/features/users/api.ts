@@ -10,6 +10,7 @@ const getUsers = async (): Promise<User[]> => {
 
 const getUserById = async (id: string): Promise<User> => {
   const response = await apiClient.get(`/users/${id}`);
+  console.log('Fetched user:', response.data);
   return response.data.data;
 };
 

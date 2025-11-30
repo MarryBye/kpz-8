@@ -13,7 +13,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UsersNewRouteImport } from './routes/users/new'
 import { Route as UsersListRouteImport } from './routes/users/list'
 import { Route as UsersUserIdRouteImport } from './routes/users/$userId'
+import { Route as RideordersNewRouteImport } from './routes/rideorders/new'
+import { Route as RideordersListRouteImport } from './routes/rideorders/list'
+import { Route as RideordersRideOrderIdRouteImport } from './routes/rideorders/$rideOrderId'
+import { Route as CarsNewRouteImport } from './routes/cars/new'
+import { Route as CarsListRouteImport } from './routes/cars/list'
+import { Route as CarsCarIdRouteImport } from './routes/cars/$carId'
+import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as UsersUpdateUserIdRouteImport } from './routes/users/update.$userId'
+import { Route as RideordersUpdateRideOrderIdRouteImport } from './routes/rideorders/update.$rideOrderId'
+import { Route as CarsUpdateCarIdRouteImport } from './routes/cars/update.$carId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,63 +44,172 @@ const UsersUserIdRoute = UsersUserIdRouteImport.update({
   path: '/users/$userId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RideordersNewRoute = RideordersNewRouteImport.update({
+  id: '/rideorders/new',
+  path: '/rideorders/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RideordersListRoute = RideordersListRouteImport.update({
+  id: '/rideorders/list',
+  path: '/rideorders/list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RideordersRideOrderIdRoute = RideordersRideOrderIdRouteImport.update({
+  id: '/rideorders/$rideOrderId',
+  path: '/rideorders/$rideOrderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarsNewRoute = CarsNewRouteImport.update({
+  id: '/cars/new',
+  path: '/cars/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarsListRoute = CarsListRouteImport.update({
+  id: '/cars/list',
+  path: '/cars/list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarsCarIdRoute = CarsCarIdRouteImport.update({
+  id: '/cars/$carId',
+  path: '/cars/$carId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UsersUpdateUserIdRoute = UsersUpdateUserIdRouteImport.update({
   id: '/users/update/$userId',
   path: '/users/update/$userId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RideordersUpdateRideOrderIdRoute =
+  RideordersUpdateRideOrderIdRouteImport.update({
+    id: '/rideorders/update/$rideOrderId',
+    path: '/rideorders/update/$rideOrderId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CarsUpdateCarIdRoute = CarsUpdateCarIdRouteImport.update({
+  id: '/cars/update/$carId',
+  path: '/cars/update/$carId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/cars/$carId': typeof CarsCarIdRoute
+  '/cars/list': typeof CarsListRoute
+  '/cars/new': typeof CarsNewRoute
+  '/rideorders/$rideOrderId': typeof RideordersRideOrderIdRoute
+  '/rideorders/list': typeof RideordersListRoute
+  '/rideorders/new': typeof RideordersNewRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/users/list': typeof UsersListRoute
   '/users/new': typeof UsersNewRoute
+  '/cars/update/$carId': typeof CarsUpdateCarIdRoute
+  '/rideorders/update/$rideOrderId': typeof RideordersUpdateRideOrderIdRoute
   '/users/update/$userId': typeof UsersUpdateUserIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/cars/$carId': typeof CarsCarIdRoute
+  '/cars/list': typeof CarsListRoute
+  '/cars/new': typeof CarsNewRoute
+  '/rideorders/$rideOrderId': typeof RideordersRideOrderIdRoute
+  '/rideorders/list': typeof RideordersListRoute
+  '/rideorders/new': typeof RideordersNewRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/users/list': typeof UsersListRoute
   '/users/new': typeof UsersNewRoute
+  '/cars/update/$carId': typeof CarsUpdateCarIdRoute
+  '/rideorders/update/$rideOrderId': typeof RideordersUpdateRideOrderIdRoute
   '/users/update/$userId': typeof UsersUpdateUserIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/cars/$carId': typeof CarsCarIdRoute
+  '/cars/list': typeof CarsListRoute
+  '/cars/new': typeof CarsNewRoute
+  '/rideorders/$rideOrderId': typeof RideordersRideOrderIdRoute
+  '/rideorders/list': typeof RideordersListRoute
+  '/rideorders/new': typeof RideordersNewRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/users/list': typeof UsersListRoute
   '/users/new': typeof UsersNewRoute
+  '/cars/update/$carId': typeof CarsUpdateCarIdRoute
+  '/rideorders/update/$rideOrderId': typeof RideordersUpdateRideOrderIdRoute
   '/users/update/$userId': typeof UsersUpdateUserIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth/login'
+    | '/cars/$carId'
+    | '/cars/list'
+    | '/cars/new'
+    | '/rideorders/$rideOrderId'
+    | '/rideorders/list'
+    | '/rideorders/new'
     | '/users/$userId'
     | '/users/list'
     | '/users/new'
+    | '/cars/update/$carId'
+    | '/rideorders/update/$rideOrderId'
     | '/users/update/$userId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth/login'
+    | '/cars/$carId'
+    | '/cars/list'
+    | '/cars/new'
+    | '/rideorders/$rideOrderId'
+    | '/rideorders/list'
+    | '/rideorders/new'
     | '/users/$userId'
     | '/users/list'
     | '/users/new'
+    | '/cars/update/$carId'
+    | '/rideorders/update/$rideOrderId'
     | '/users/update/$userId'
   id:
     | '__root__'
     | '/'
+    | '/auth/login'
+    | '/cars/$carId'
+    | '/cars/list'
+    | '/cars/new'
+    | '/rideorders/$rideOrderId'
+    | '/rideorders/list'
+    | '/rideorders/new'
     | '/users/$userId'
     | '/users/list'
     | '/users/new'
+    | '/cars/update/$carId'
+    | '/rideorders/update/$rideOrderId'
     | '/users/update/$userId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  CarsCarIdRoute: typeof CarsCarIdRoute
+  CarsListRoute: typeof CarsListRoute
+  CarsNewRoute: typeof CarsNewRoute
+  RideordersRideOrderIdRoute: typeof RideordersRideOrderIdRoute
+  RideordersListRoute: typeof RideordersListRoute
+  RideordersNewRoute: typeof RideordersNewRoute
   UsersUserIdRoute: typeof UsersUserIdRoute
   UsersListRoute: typeof UsersListRoute
   UsersNewRoute: typeof UsersNewRoute
+  CarsUpdateCarIdRoute: typeof CarsUpdateCarIdRoute
+  RideordersUpdateRideOrderIdRoute: typeof RideordersUpdateRideOrderIdRoute
   UsersUpdateUserIdRoute: typeof UsersUpdateUserIdRoute
 }
 
@@ -125,6 +243,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UsersUserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rideorders/new': {
+      id: '/rideorders/new'
+      path: '/rideorders/new'
+      fullPath: '/rideorders/new'
+      preLoaderRoute: typeof RideordersNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rideorders/list': {
+      id: '/rideorders/list'
+      path: '/rideorders/list'
+      fullPath: '/rideorders/list'
+      preLoaderRoute: typeof RideordersListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rideorders/$rideOrderId': {
+      id: '/rideorders/$rideOrderId'
+      path: '/rideorders/$rideOrderId'
+      fullPath: '/rideorders/$rideOrderId'
+      preLoaderRoute: typeof RideordersRideOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cars/new': {
+      id: '/cars/new'
+      path: '/cars/new'
+      fullPath: '/cars/new'
+      preLoaderRoute: typeof CarsNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cars/list': {
+      id: '/cars/list'
+      path: '/cars/list'
+      fullPath: '/cars/list'
+      preLoaderRoute: typeof CarsListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cars/$carId': {
+      id: '/cars/$carId'
+      path: '/cars/$carId'
+      fullPath: '/cars/$carId'
+      preLoaderRoute: typeof CarsCarIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/users/update/$userId': {
       id: '/users/update/$userId'
       path: '/users/update/$userId'
@@ -132,14 +299,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UsersUpdateUserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rideorders/update/$rideOrderId': {
+      id: '/rideorders/update/$rideOrderId'
+      path: '/rideorders/update/$rideOrderId'
+      fullPath: '/rideorders/update/$rideOrderId'
+      preLoaderRoute: typeof RideordersUpdateRideOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cars/update/$carId': {
+      id: '/cars/update/$carId'
+      path: '/cars/update/$carId'
+      fullPath: '/cars/update/$carId'
+      preLoaderRoute: typeof CarsUpdateCarIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  CarsCarIdRoute: CarsCarIdRoute,
+  CarsListRoute: CarsListRoute,
+  CarsNewRoute: CarsNewRoute,
+  RideordersRideOrderIdRoute: RideordersRideOrderIdRoute,
+  RideordersListRoute: RideordersListRoute,
+  RideordersNewRoute: RideordersNewRoute,
   UsersUserIdRoute: UsersUserIdRoute,
   UsersListRoute: UsersListRoute,
   UsersNewRoute: UsersNewRoute,
+  CarsUpdateCarIdRoute: CarsUpdateCarIdRoute,
+  RideordersUpdateRideOrderIdRoute: RideordersUpdateRideOrderIdRoute,
   UsersUpdateUserIdRoute: UsersUpdateUserIdRoute,
 }
 export const routeTree = rootRouteImport
