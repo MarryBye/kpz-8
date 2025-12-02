@@ -70,7 +70,7 @@ Users: useUsers, useUser, useCreateUser, useUpdateUser, useDeleteUser — src/fe
 Cars: useCars, useCar, useCreateCar, useUpdateCar, useDeleteCar — src/features/cars/api.ts
 RideOrders: useRideOrders, useRideOrder, useCreateRideOrder, useUpdateRideOrder, useDeleteRideOrder — src/features/rideorders/api.ts
 
-Приклад (витяг — useUsers / useCreateUser):
+Приклад:
 
 ```ts
 export const useUsers = () => useQuery<User[]>({ queryKey: ['users'], queryFn: getUsers });
@@ -92,5 +92,5 @@ export const useCreateUser = () => {
 
 Коментарі щодо особливостей реалізації та відомих проблем
 
-Axios-interceptor використовує Zustand стор для доступу до токена через useAuthStore.getState() — див. src/lib/axios.ts і src/store/useAuthStore.ts.
+Axios-interceptor використовує Zustand стор для доступу до токена через useAuthStore.getState()  
 При 401 відбувається очищення токена і редірект на /auth/login.
